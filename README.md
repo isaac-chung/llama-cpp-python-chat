@@ -3,9 +3,13 @@
 [![python](https://img.shields.io/badge/Python-3.11-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-Chat tools powered by the [llama-cpp-python](https://github.com/abetlen/llama-cpp-python) library. Made for a [PyCon LT 2024 Talk](https://pycon.lt/2024/talks/DHBLXW). This library provides a Command Line Chat and a Telegram Bot.
+Chat tools powered by the [llama-cpp-python](https://github.com/abetlen/llama-cpp-python) library. Made for a [PyCon LT 2024 Talk](https://pycon.lt/2024/talks/DHBLXW). This library provides:
+- [a Command Line Chat](#command-line-chat): A chat bot that runs on the command line interface. Outputs are streamed so that you're able to see the "typing in real time" experience.
+- [a Telegram Bot](#telegram-bot): A chat bot on Telegram.
 
 ## Prerequisites
+For either application, we need the same model and similar dependencies.
+
 Use the command line to download the model and the libraries. 
 1. On a linux machine, run
 ```
@@ -25,6 +29,11 @@ To enable verbose outputs, set the number of threads, use the flags
 ```
 python run_chat.py --verbose --n_threads 12
 ```
+Once it is up and running, start chatting with it by directly typing your prompt and hit `Enter`. Chat state is managed under the hood. 
+
+### Special Commands
+- `bye`: Ends the chat and also the program.
+- `clear`: Clear chat history.
 
 
 ## Telegram Bot
