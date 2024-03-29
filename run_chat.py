@@ -3,12 +3,14 @@ import os
 import sys
 from llama_cpp import Llama
 
+cwd = os.getcwd()
+model_path = os.path.join(cwd, "capybarahermes-2.5-mistral-7b.Q4_K_M.gguf")
 
 def main(
-    model_path="/home/ubuntu/isaac/telegram-chatbot/capybarahermes-2.5-mistral-7b.Q4_K_M.gguf",
+    model_path,
     verbose=False,
     n_threads=16,
-    seed=None,
+    seed=123,
 ):
     params = {
         "model_path": model_path,
@@ -55,10 +57,13 @@ def main(
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
+        "--model_path", default=model_path, help="Full path to the quantized model GGUF file."
+    )
+    parser.add_argument(
         "--n_threads", default=16, help="Number of threads to run the LLM."
     )
     parser.add_argument(
         "-v", "--verbose", action="store_true", help="Whether to have verbose outputs."
     )
     args = parser.parse_args()
-    main(verbose=args.verbose)
+    main(model_path=args.model_path, n_threads=args.n_threads, verbose=args.verbose)
