@@ -4,8 +4,8 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 <div align="center">
-    <img src="static/llama-cpp-python-16-threads.gif" style="max-height: 350px;" />
-    <img src="static/telegram-bot.png" style="max-height: 350px;" />
+    <img src="static/llama-cpp-python-16-threads.gif" height=350 />
+    <img src="static/telegram-bot.png" height=350 />
 </div>
 
 Chat tools powered by the [llama-cpp-python](https://github.com/abetlen/llama-cpp-python) library. Made for a [PyCon LT 2024 Talk](https://pycon.lt/2024/talks/DHBLXW). This repository provides:
