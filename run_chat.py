@@ -11,6 +11,7 @@ def main(
     verbose=False,
     n_threads=16,
     seed=123,
+    n_gpu_layers=None
 ):
     params = {
         "model_path": model_path,
@@ -18,16 +19,17 @@ def main(
         "seed": seed,
         "n_threads": n_threads,
         "verbose": verbose,
-        #'n_batch': 256,
-        #'n_gpu_layers': 128
     }
+
+    if n_gpu_layers:
+        params.update({'n_gpu_layers': n_gpu_layers})
 
     llm = Llama(**params)
     os.system("clear")
 
     messages = ""
     while True:
-        prompt = input(">>> ")
+        prompt = input("\n>>> ")
 
         if prompt == "clear":
             print("=== Clear! ===")
@@ -61,6 +63,9 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--n_threads", default=16, help="Number of threads to run the LLM."
+    )
+    parser.add_argument(
+        "--n_gpu_layers", default=None, help="Number of GPU layers to offload to the GPU if available."
     )
     parser.add_argument(
         "-v", "--verbose", action="store_true", help="Whether to have verbose outputs."
