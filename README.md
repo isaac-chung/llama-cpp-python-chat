@@ -3,9 +3,9 @@
 [![python](https://img.shields.io/badge/Python-3.11-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-<center><img src="static/llama-cpp-python-16-threads.gif" height="500" /> &ensp; <img src="static/telegram-bot.png" height="500" /></center>
+<center><img src="static/llama-cpp-python-16-threads.gif" height="400" /> &ensp; <img src="static/telegram-bot.png" height="400" /></center>
 
-Chat tools powered by the [llama-cpp-python](https://github.com/abetlen/llama-cpp-python) library. Made for a [PyCon LT 2024 Talk](https://pycon.lt/2024/talks/DHBLXW). This library provides:
+Chat tools powered by the [llama-cpp-python](https://github.com/abetlen/llama-cpp-python) library. Made for a [PyCon LT 2024 Talk](https://pycon.lt/2024/talks/DHBLXW). This repository provides:
 - [a Command Line Chat](#command-line-chat): A chat bot that runs on the command line interface. Outputs are streamed so that you're able to see the "typing in real time" experience.
 - [a Telegram Bot](#telegram-bot): A chat bot on Telegram.
 

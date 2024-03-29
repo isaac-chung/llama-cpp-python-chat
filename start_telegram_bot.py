@@ -19,7 +19,7 @@ params = {
     "chat_format": "llama-2",
     "seed": 4,
     "n_threads": 16,
-    "max_tokens": 512,
+    "max_tokens": 256,
     #'n_batch': 256,
     # 'n_gpu_layers': 35
 }
