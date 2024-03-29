@@ -24,6 +24,8 @@ pip3 install -r requirements.txt
 ```
 huggingface-cli download TheBloke/CapybaraHermes-2.5-Mistral-7B-GGUF capybarahermes-2.5-mistral-7b.Q4_K_M.gguf --local-dir . --local-dir-use-symlinks False
 ```
+> [!NOTE]  
+> Offloading to GPU requires installing with BLAS.
 
 ## Command Line Chat
 In the root directory of the repo, run
