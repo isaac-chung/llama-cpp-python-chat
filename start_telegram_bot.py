@@ -5,7 +5,7 @@ from llama_cpp import Llama
 import telebot
 
 logging.basicConfig(level=logging.INFO)
-TOKENS_TO_CLEAN = ["[INST]", "[/INST]", "<<ASSISTANT>>", "<</ASSISTANT>>"]
+TOKENS_TO_CLEAN = ["[INST]", "[/INST]", "<<ASSISTANT>>", "<</ASSISTANT>>", "<<START>>", "<</START>>", "<<SYS>>"]
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 
 bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN, threaded=False)
@@ -62,12 +62,12 @@ def chat(message):
 
     bot.send_chat_action(chat_id, "typing")
     try:
-        raw_output = llm.create_chat_completion(messages=messages, stop=["[/INST]\n\n"])
+        raw_output = llm.create_chat_completion(messages=messages, stop=["[/INST]", "\n\n", "<<USER>>"])
     except Exception as e:
         logging.info(f"Prompt failed. Fallback. {e}")
         messages.pop(-1)
         messages.append({"role": "user", "content": "No message"})
-        raw_output = llm.create_chat_completion(messages=messages, stop=["[/INST]\n\n"])
+        raw_output = llm.create_chat_completion(messages=messages, stop=["[/INST]", "\n\n", "<<USER>>"])
 
     usage = raw_output.get("usage", "")
     logging.info(f"{usage=}")
