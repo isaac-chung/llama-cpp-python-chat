@@ -19,7 +19,7 @@ def main(
 ):
     params = {
         "model_path": model_path,
-        "n_ctx": 1024,
+        "n_ctx": 32768,
         "seed": seed,
         "n_threads": n_threads,
         "verbose": verbose,
