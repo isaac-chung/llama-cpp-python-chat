@@ -2,3 +2,4 @@ huggingface-hub==0.21.4
 llama_cpp_python==0.2.57
 pyTelegramBotAPI==4.15.4
 ruff==0.3.4
+termcolor==2.4.0

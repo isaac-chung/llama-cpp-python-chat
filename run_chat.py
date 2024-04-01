@@ -1,10 +1,14 @@
 import argparse
 import os
 import sys
+
 from llama_cpp import Llama
+from termcolor import cprint
 
 cwd = os.getcwd()
 model_path = os.path.join(cwd, "capybarahermes-2.5-mistral-7b.Q4_K_M.gguf")
+
+print_bot = lambda x: cprint(x, 'green', end='')
 
 def main(
     model_path,
@@ -50,7 +54,7 @@ def main(
         for output in stream:
             out_text = output["choices"][0]["text"]
             messages += out_text
-            print(out_text, end="")
+            print_bot(out_text)
             sys.stdout.flush()
 
         messages += " "
