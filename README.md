@@ -53,8 +53,11 @@ A telegram bot powered by [llama-cpp-python](https://github.com/abetlen/llama-cp
 export TELEGRAM_BOT_TOKEN=YOUR_TOKEN
 ```
 
-### 3. Running the bot
+### 2. Running the bot
 In the root directory of the repo, run
 ```
 python start_telegram_bot.py
 ```
+
+## Limitations
+Currently the server from python bindings do not support batched inference nor concurrent requests.
